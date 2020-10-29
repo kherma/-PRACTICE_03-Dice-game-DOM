@@ -11,14 +11,16 @@ let activePlayer = 0;
 // Declare players scores
 let playerScores = [0, 0];
 
+// Select buttons
+const btnNewGame = document.querySelector('.btn--new');
+const btnRollDice = document.querySelector('.btn--roll');
+const btnHold = document.querySelector('.btn--hold');
+
 // Selecting players scores
 const scorePlayerOne = document.getElementById('score--0');
 const scorePlayerTwo = document.getElementById('score--1');
 scorePlayerOne.textContent = playerScores[0];
 scorePlayerTwo.textContent = playerScores[1];
-
-// const currentPlayerOne = document.getElementById('current--0');
-// const currentPlayerTwo = document.getElementById('current--1');
 
 // Select players
 const selectPlayerOne = document.querySelector('.player--0');
@@ -28,10 +30,6 @@ const selectPlayerTwo = document.querySelector('.player--1');
 const dice = document.querySelector('.dice');
 dice.classList.add('hide');
 
-// Select buttons
-const btnNewGame = document.querySelector('.btn--new');
-const btnRollDice = document.querySelector('.btn--roll');
-const btnHold = document.querySelector('.btn--hold');
 
 // Dice Roll function
 btnRollDice.addEventListener('click', function(){
@@ -45,14 +43,30 @@ btnRollDice.addEventListener('click', function(){
 
     // 3. Check for rollde 1 True ? change player : update current score
     if (randomNumber === 1) {
-        currentScore = 0;
-        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
-        activePlayer = activePlayer === 0 ? 1 : 0;
-        selectPlayerOne.classList.toggle('player--active');
-        selectPlayerTwo.classList.toggle('player--active');
-        dice.classList.add('hide');
+        switchPlayers();switchPlayers
     } else {
         currentScore += randomNumber;
         document.getElementById(`current--${activePlayer}`).textContent = currentScore;
     }
 });
+
+// Hold Score function
+btnHold.addEventListener('click', function(){
+    playerScores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = playerScores[activePlayer];
+
+    if(playerScores[activePlayer] >= 100) {
+        console.log('Win!');
+    } else {
+        switchPlayers();
+    }
+});
+
+function switchPlayers() {
+    currentScore = 0;
+    document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    selectPlayerOne.classList.toggle('player--active');
+    selectPlayerTwo.classList.toggle('player--active');
+    dice.classList.add('hide');
+}
