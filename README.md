@@ -1,5 +1,4 @@
 # -PRACTICE_03-Dice-game-DOM
 
 ## Practice Project - course project;
-## Side Project - personal project;
-## School Project - homework project;
+## You can check it here: https://friendly-torvalds-2ecb3d.netlify.app/
