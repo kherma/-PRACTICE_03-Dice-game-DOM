@@ -1,0 +1,23 @@
+{
+  "name": "practice-03-dice-game-dom",
+  "version": "1.0.0",
+  "description": "## Practice Project - course project; ## You can check it here: https://friendly-torvalds-2ecb3d.netlify.app/",
+  "main": "script.js",
+  "scripts": {
+    "deploy": "gh-pages -d *"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kherma/practice-03-dice-game-dom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kherma/practice-03-dice-game-dom/issues"
+  },
+  "homepage": "https://kherma.github.io/dice-game",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
