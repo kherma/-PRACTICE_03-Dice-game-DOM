@@ -4,7 +4,7 @@
   "description": "## Practice Project - course project; ## You can check it here: https://friendly-torvalds-2ecb3d.netlify.app/",
   "main": "script.js",
   "scripts": {
-    "deploy": "gh-pages -d *"
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
